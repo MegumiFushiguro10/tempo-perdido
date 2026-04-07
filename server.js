@@ -44,8 +44,8 @@ app.post('/api/chat', async (req, res) => {
     }
 });
 
-// 5. Ligar o Servidor
-const PORTA = 3000;
+// A nuvem define a porta via process.env.PORT. Se não houver, usa a 3000 (local)
+const PORTA = process.env.PORT || 3000;
 app.listen(PORTA, () => {
-    console.log(`🚀 Servidor rodando em http://localhost:${PORTA}`);
+    console.log(`🚀 Servidor rodando na porta ${PORTA}`);
 });
